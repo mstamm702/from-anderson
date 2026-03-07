@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Positioning Statement Is a Decision, Not a Description — From Anderson No. 06</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A; --navy-deep: #111d33; --gold: #C9992A; --gold-light: #E8B84B;
+    --gold-pale: #f5e6c0; --cream: #FAF7F2; --warm-white: #FFFDF9;
+    --text: #1a1a1a; --text-mid: #444444; --text-light: #777777; --rule: #e0d8cc;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); }
+  header { background: var(--navy-deep); border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .wordmark { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: white; text-decoration: none; }
+  .wordmark span { color: var(--gold); }
+  nav { display: flex; gap: 32px; }
+  nav a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+  nav a:hover { color: var(--gold-light); }
+  .article-header { background: var(--navy); padding: 72px 40px 64px; position: relative; overflow: hidden; }
+  .article-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .article-header-inner { max-width: 760px; margin: 0 auto; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); text-decoration: none; text-transform: uppercase; margin-bottom: 36px; transition: color 0.2s; }
+  .back-link:hover { color: var(--gold); }
+  .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+  .article-num { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gold); background: rgba(201,153,42,0.15); padding: 4px 12px; border-radius: 2px; }
+  .article-category { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+  .article-source { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+  .article-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: white; line-height: 1.2; margin-bottom: 24px; }
+  .article-hook { font-size: 1.1rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.7; border-left: 3px solid var(--gold); padding-left: 20px; }
+  .podcast-bar { background: var(--warm-white); border-bottom: 1px solid var(--rule); }
+  .podcast-bar-inner { max-width: 760px; margin: 0 auto; padding: 20px 40px; display: flex; align-items: center; gap: 20px; }
+  .podcast-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); white-space: nowrap; }
+  .podcast-placeholder { flex: 1; background: var(--cream); border: 1px dashed var(--rule); border-radius: 3px; padding: 12px 20px; font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--text-light); text-align: center; }
+  .article-body { max-width: 760px; margin: 0 auto; padding: 64px 40px 80px; }
+  .section-block { margin-bottom: 56px; }
+  .section-label { display: flex; align-items: center; gap: 12px; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .section-heading { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 600; color: var(--navy); margin-bottom: 16px; line-height: 1.3; }
+  .prose p { font-size: 1rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 20px; font-weight: 300; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { font-weight: 500; color: var(--text); }
+  .question-block { background: var(--navy); border-radius: 3px; padding: 40px 44px; position: relative; overflow: hidden; margin-top: 56px; }
+  .question-block::before { content: '\201C'; position: absolute; top: -20px; left: 24px; font-family: 'Playfair Display', serif; font-size: 8rem; font-weight: 700; color: rgba(201,153,42,0.15); line-height: 1; pointer-events: none; }
+  .question-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .question-text { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; font-weight: 400; color: white; line-height: 1.65; }
+  .article-nav { border-top: 1px solid var(--rule); max-width: 760px; margin: 0 auto; padding: 40px 40px 80px; display: flex; justify-content: space-between; gap: 24px; }
+  .nav-prev, .nav-next { text-decoration: none; color: inherit; flex: 1; padding: 24px; border: 1px solid var(--rule); border-radius: 3px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .nav-next { text-align: right; }
+  .nav-prev:hover, .nav-next:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(27,42,74,0.08); }
+  .nav-direction { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
+  .nav-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+  footer { border-top: 1px solid var(--rule); padding: 40px; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .footer-left { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--navy); }
+  .footer-left span { color: var(--gold); }
+  .footer-right { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--text-light); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .article-header-inner { animation: fadeUp 0.6s ease both; }
+  .article-body { animation: fadeUp 0.6s 0.1s ease both; }
+  @media (max-width: 600px) {
+    .article-header { padding: 48px 20px 40px; }
+    .article-body { padding: 40px 20px 60px; }
+    .podcast-bar-inner { padding: 16px 20px; flex-direction: column; align-items: flex-start; }
+    .article-nav { flex-direction: column; padding: 32px 20px 60px; }
+    footer { flex-direction: column; gap: 12px; padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="wordmark">From <span>Anderson</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../library.html">Library</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="article-header-inner">
+    <a href="../library.html" class="back-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M7 12L2 7l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Library</a>
+    <div class="article-meta-row">
+      <span class="article-num">No. 06</span>
+      <span class="article-category">Marketing</span>
+      <span class="article-source">MGMT 411 &nbsp;&middot;&nbsp; Marketing Management</span>
+    </div>
+    <h1 class="article-title">A Positioning Statement Is a Decision, Not a Description</h1>
+    <p class="article-hook">Most positioning statements describe what a product does. The best ones make a choice about who it is for and what it will not be. The difference between describing and deciding is sharper than it sounds.</p>
+  </div>
+</div>
+
+<div class="podcast-bar">
+  <div class="podcast-bar-inner">
+    <span class="podcast-label">Listen</span>
+    <div class="podcast-placeholder">Podcast episode coming soon &nbsp;&middot;&nbsp; Embed audio player here</div>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="section-block">
+    <div class="section-label">The Framework</div>
+    <div class="section-heading">What Positioning Actually Requires</div>
+    <div class="prose">
+      <p>The positioning assignment in MGMT 411 started with an AI-generated statement for a product called Loyalty Link, a consumer app for managing loyalty program accounts and credit cards in one place. The AI output was technically correct. It named the target, named the category, named the benefit. It was also completely undifferentiated. It described the product without making any choices.</p>
+      <p>Professor Shaddy's framework: for a defined target with a specific need, the product is the category that delivers a specific benefit, unlike the alternatives, because of a specific reason to believe. Every element of that structure is doing real work. The target is not broad. The benefit is not generic. The unlike clause actually names what makes this different from everything else in the category.</p>
+      <p>The revised statement: <em>For rewards maximizers who belong to multiple loyalty programs and use rewards-focused credit cards, Loyalty Link is the loyalty management app that brings rewards, status, and card-linked benefits into one place by securely linking loyalty accounts and credit cards and automatically tracking rewards across brands.</em></p>
+      <p>The difference between the AI version and the revised version is not tone. It is the presence of actual choices. The target is rewards maximizers, not all consumers who have loyalty programs. The benefit is the specific combination of loyalty accounts and credit cards. The unlike clause is implicit but present.</p>
+      <p><strong>A positioning statement that tries to serve everyone ends up meaning nothing to anyone.</strong> The discipline is in the exclusion. What the statement does not say is as important as what it does.</p>
+    </div>
+  </div>
+  <div class="section-block">
+    <div class="section-label">The Application</div>
+    <div class="section-heading">Positioning as a Filter for Every Downstream Decision</div>
+    <div class="prose">
+      <p>A strong positioning statement is not just a marketing communications tool. It is an operational filter. It tells the product team what to build and what not to build. It tells the brand team what to say and what to leave out. It tells the marketing team which channels and which audiences are in scope and which are not.</p>
+      <p>For a loyalty program, a co-branded credit card, or a digital product, the positioning question is worth asking with rigor. Who is this specifically for? What specific benefit does it deliver that nothing else delivers in exactly the same way? And what would we have to stop doing or stop saying to make that positioning clear and credible?</p>
+      <p>The temptation is always to broaden. Broader positioning feels safer because it excludes fewer potential customers. But the cost of broad positioning is that it speaks compellingly to no one specifically. The products that earn loyalty tend to be the ones that made a clear choice about who they were for.</p>
+    </div>
+  </div>
+  <div class="question-block">
+    <div class="question-label">The Question Worth Asking</div>
+    <p class="question-text">Does our positioning statement make a choice, or does it describe everything we do for everyone who might be interested?</p>
+  </div>
+</div>
+
+<div class="article-nav">
+  <a href="05-segmentation.html" class="nav-prev"><div class="nav-direction">&larr; Previous</div><div class="nav-title">Not All Customers Are Created Equal</div></a>
+  <a href="07-know-your-core.html" class="nav-next"><div class="nav-direction">Next &rarr;</div><div class="nav-title">Know Your Core</div></a>
+</div>
+
+<footer>
+  <div class="footer-left">From <span>Anderson</span></div>
+  <div class="footer-right">Michael Stamm &nbsp;&middot;&nbsp; UCLA Anderson EMBA &nbsp;&middot;&nbsp; 2027</div>
+</footer>
+
+</body>
+</html>
