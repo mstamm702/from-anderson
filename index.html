@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Anderson — Michael Stamm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-deep: #111d33;
+    --navy-mid: #243558;
+    --gold: #C9992A;
+    --gold-light: #E8B84B;
+    --gold-pale: #f5e6c0;
+    --cream: #FAF7F2;
+    --warm-white: #FFFDF9;
+    --text: #1a1a1a;
+    --text-mid: #444444;
+    --text-light: #777777;
+    --rule: #e0d8cc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy-deep);
+    border-bottom: 3px solid var(--gold);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--warm-white);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .wordmark span {
+    color: var(--gold);
+  }
+
+  nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  nav a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 40px 72px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,153,42,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 700;
+    color: var(--warm-white);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.75;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-meta-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-meta-item strong {
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+  }
+
+  /* Featured card in hero */
+  .hero-featured {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,153,42,0.3);
+    border-radius: 4px;
+    padding: 36px;
+    position: relative;
+  }
+
+  .hero-featured::before {
+    content: 'Latest';
+    position: absolute;
+    top: -12px;
+    left: 28px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+  }
+
+  .featured-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .featured-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--warm-white);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .featured-excerpt {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .btn-read {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 12px 24px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-read:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-read svg {
+    transition: transform 0.2s;
+  }
+
+  .btn-read:hover svg {
+    transform: translateX(3px);
+  }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 40px;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .section-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .section-link:hover { color: var(--navy); }
+
+  /* ── ARTICLE GRID ── */
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 80px;
+  }
+
+  .article-card {
+    background: var(--warm-white);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 32px 28px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .article-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .article-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 32px rgba(27,42,74,0.1);
+    transform: translateY(-2px);
+  }
+
+  .article-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .card-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.35;
+    margin-bottom: 12px;
+    flex: 1;
+  }
+
+  .card-excerpt {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .card-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+
+  .card-tags {
+    display: flex;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background: var(--gold-pale);
+    color: var(--navy);
+  }
+
+  .tag.audio {
+    background: rgba(27,42,74,0.08);
+    color: var(--navy);
+  }
+
+  /* ── ABOUT STRIP ── */
+  .about-strip {
+    background: var(--navy);
+    margin: 0 -40px;
+    padding: 64px 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .about-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--warm-white);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .about-title-text {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  .about-body {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.8;
+  }
+
+  .about-body p + p {
+    margin-top: 16px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-left {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .footer-left span { color: var(--gold); }
+
+  .footer-right {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left { animation: fadeUp 0.7s ease both; }
+  .hero-featured { animation: fadeUp 0.7s 0.15s ease both; }
+
+  .article-card {
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .article-card:nth-child(1) { animation-delay: 0.05s; }
+  .article-card:nth-child(2) { animation-delay: 0.1s; }
+  .article-card:nth-child(3) { animation-delay: 0.15s; }
+  .article-card:nth-child(4) { animation-delay: 0.2s; }
+  .article-card:nth-child(5) { animation-delay: 0.25s; }
+  .article-card:nth-child(6) { animation-delay: 0.3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .article-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-strip { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 0 20px; }
+    nav { gap: 20px; }
+    .hero { padding: 48px 20px; }
+    main { padding: 48px 20px; }
+    .article-grid { grid-template-columns: 1fr; }
+    .about-strip { margin: 0 -20px; padding: 48px 20px; }
+    footer { flex-direction: column; gap: 12px; padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="wordmark">From <span>Anderson</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="library.html">Library</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-label">A Knowledge-Sharing Series</div>
+      <h1>Business ideas worth <em>bringing into the room.</em></h1>
+      <p class="hero-desc">Frameworks, cases, and principles from the UCLA Anderson EMBA program, translated into practical application for marketing and business leaders.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><strong>Author</strong> &nbsp; Michael Stamm</div>
+        <div class="hero-meta-item"><strong>Program</strong> &nbsp; UCLA Anderson EMBA 2027</div>
+        <div class="hero-meta-item"><strong>Format</strong> &nbsp; Written briefs + podcast episodes</div>
+      </div>
+    </div>
+
+    <div class="hero-featured">
+      <div class="featured-num">No. 14</div>
+      <div class="featured-title">AI Is 80% Business Transformation and 20% Technology</div>
+      <p class="featured-excerpt">PwC's first Chief AI Officer made it clear: the companies getting real results from AI have flipped the ratio. It is 80% business transformation and 20% technology — not the other way around.</p>
+      <a href="articles/14-ai-transformation.html" class="btn-read">
+        Read the brief
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <div class="section-header">
+    <div class="section-title">Recent Installments</div>
+    <a href="library.html" class="section-link">View full library &rarr;</a>
+  </div>
+
+  <div class="article-grid">
+
+    <a href="articles/14-ai-transformation.html" class="article-card">
+      <div class="card-num">No. 14 &nbsp;&middot;&nbsp; Technology & Strategy</div>
+      <div class="card-title">AI Is 80% Business Transformation and 20% Technology</div>
+      <p class="card-excerpt">The number one mistake companies make with AI is treating it as a technology problem. PwC's Chief AI Officer on what flipping the ratio actually looks like in practice.</p>
+      <div class="card-footer">
+        <span class="card-source">Anderson Speaker Series</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/13-what-business-are-you-in.html" class="article-card">
+      <div class="card-num">No. 13 &nbsp;&middot;&nbsp; Strategy</div>
+      <div class="card-title">What Business Are You Actually In?</div>
+      <p class="card-excerpt">Peloton's real competitive moat was never its equipment. It was 67.5% gross margin subscriptions and durable retention. The hardware was just the front door.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMT 411</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/12-ford-ev-exit.html" class="article-card">
+      <div class="card-num">No. 12 &nbsp;&middot;&nbsp; Finance</div>
+      <div class="card-title">When the Financial Statements Tell You It Is Time to Stop</div>
+      <p class="card-excerpt">Ford's EV segment lost $9.8 billion over two years. The pro forma shows how reading all three financial statements together makes the case for a hard strategic decision.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMTEX 403</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/11-customer-time-horizon.html" class="article-card">
+      <div class="card-num">No. 11 &nbsp;&middot;&nbsp; Marketing</div>
+      <div class="card-title">The Customer's Relationship with Time Changes Everything</div>
+      <p class="card-excerpt">One brand, two locations, two completely different marketing strategies. Not because the product changed — because the customer's relationship with time did.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMT 411</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/10-value-based-pricing.html" class="article-card">
+      <div class="card-num">No. 10 &nbsp;&middot;&nbsp; Value-Based Pricing</div>
+      <div class="card-title">Price to What It Is Worth, Not What It Cost</div>
+      <p class="card-excerpt">The Curled Metal case is a masterclass in the gap between cost-plus pricing and value capture. A framework every marketer should understand before the next budget conversation.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMT 411</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/09-financial-statements.html" class="article-card">
+      <div class="card-num">No. 09 &nbsp;&middot;&nbsp; Financial Literacy</div>
+      <div class="card-title">What Marketers Miss When They Skip the Balance Sheet</div>
+      <p class="card-excerpt">Reading a financial statement is not an accounting skill. It is a business fluency skill. What PENN's own 10-K reveals about capital structure, lease obligations, and strategic priorities.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMTEX 403</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="section-header">
+    <div class="section-title">Also in the Library</div>
+    <a href="library.html" class="section-link">Browse all 10 &rarr;</a>
+  </div>
+
+  <div class="article-grid">
+
+    <a href="articles/07-know-your-core.html" class="article-card">
+      <div class="card-num">No. 07 &nbsp;&middot;&nbsp; Brand Strategy</div>
+      <div class="card-title">Know Your Core</div>
+      <p class="card-excerpt">Harley Davidson tried to be someone they were not. The market told them no. What the case teaches about brand identity, audience strategy, and the cost of chasing the wrong customer.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMT 411</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/06-positioning.html" class="article-card">
+      <div class="card-num">No. 06 &nbsp;&middot;&nbsp; Positioning</div>
+      <div class="card-title">A Positioning Statement Is a Decision, Not a Description</div>
+      <p class="card-excerpt">Most positioning statements describe what a product does. The best ones make a choice about who it is for and what it will not be. The difference is sharper than it sounds.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMT 411</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/05-segmentation.html" class="article-card">
+      <div class="card-num">No. 05 &nbsp;&middot;&nbsp; Segmentation</div>
+      <div class="card-title">Not All Customers Are Created Equal</div>
+      <p class="card-excerpt">The Natureview Farm case is a clinic in how to think about segmentation under pressure. Volume is not value. The right segment question is not who can we reach but who should we serve.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMT 411</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/04-ethical-systems.html" class="article-card">
+      <div class="card-num">No. 04 &nbsp;&middot;&nbsp; Ethics & Organization</div>
+      <div class="card-title">Designing Ethical Systems</div>
+      <p class="card-excerpt">The Wells Fargo case is not a story about bad people. It is a story about a system that made bad behavior rational. The lesson is about how incentive structures shape what organizations actually do.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMTEX 414</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/03-intrapreneurship.html" class="article-card">
+      <div class="card-num">No. 03 &nbsp;&middot;&nbsp; Intrapreneurship</div>
+      <div class="card-title">The Founder Mindset Inside the Organization</div>
+      <p class="card-excerpt">Entrepreneurship does not require a startup. The mindset, the bias toward action, the willingness to build something from ambiguity, is just as valuable inside a large organization.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMT 295A</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/02-behavioral-economics.html" class="article-card">
+      <div class="card-num">No. 02 &nbsp;&middot;&nbsp; Behavioral Economics</div>
+      <div class="card-title">Your Customers Are Not Rational and That Is the Point</div>
+      <p class="card-excerpt">Behavioral economics does not describe how people should make decisions. It describes how they actually do. The implications for how we design offers, experiences, and communications are significant.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMT 411</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/01-business-model-disruption.html" class="article-card">
+      <div class="card-num">No. 01 &nbsp;&middot;&nbsp; Business Strategy</div>
+      <div class="card-title">Business Model Disruption</div>
+      <p class="card-excerpt">Domino's did not improve its pizza and become a better pizza company. It rebuilt its entire operating model around digital and became a technology company that sells pizza. The distinction matters more than it seems.</p>
+      <div class="card-footer">
+        <span class="card-source">MGMT 295A</span>
+        <div class="card-tags"><span class="tag">Read</span><span class="tag audio">Listen</span></div>
+      </div>
+    </a>
+
+  </div>
+
+</main>
+
+<div class="about-strip">
+  <div>
+    <div class="about-label">The Author</div>
+    <div class="about-name">Michael Stamm</div>
+    <div class="about-title-text">Digital Product Marketing<br>PENN Entertainment<br><br>UCLA Anderson EMBA<br>Class of 2027</div>
+  </div>
+  <div class="about-body">
+    <p>From Anderson is a personal knowledge-sharing initiative, not an official publication of PENN Entertainment or UCLA Anderson. It reflects my own thinking, developed through coursework, case analysis, and professional experience in digital product marketing.</p>
+    <p>The goal is simple: take frameworks that are genuinely useful and bring them into the conversations that matter. Each installment is written to be readable in under three minutes and accompanied by a podcast episode for those who prefer to listen.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">From <span>Anderson</span></div>
+  <div class="footer-right">Michael Stamm &nbsp;&middot;&nbsp; UCLA Anderson EMBA &nbsp;&middot;&nbsp; 2027</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library — From Anderson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-deep: #111d33;
+    --gold: #C9992A;
+    --gold-light: #E8B84B;
+    --gold-pale: #f5e6c0;
+    --cream: #FAF7F2;
+    --warm-white: #FFFDF9;
+    --text: #1a1a1a;
+    --text-mid: #444444;
+    --text-light: #777777;
+    --rule: #e0d8cc;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); }
+
+  header {
+    background: var(--navy-deep);
+    border-bottom: 3px solid var(--gold);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .wordmark { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: white; text-decoration: none; }
+  .wordmark span { color: var(--gold); }
+  nav { display: flex; gap: 32px; }
+  nav a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+  nav a:hover, nav a.active { color: var(--gold-light); }
+
+  .page-header {
+    background: var(--navy);
+    padding: 64px 40px 56px;
+    border-bottom: 1px solid rgba(201,153,42,0.3);
+  }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; }
+  .page-label {
+    font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .page-label::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--gold); }
+  .page-header h1 {
+    font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700;
+    color: white; margin-bottom: 16px;
+  }
+  .page-header p { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.65); max-width: 560px; line-height: 1.7; }
+
+  main { max-width: 1200px; margin: 0 auto; padding: 64px 40px; }
+
+  /* Filter tabs */
+  .filter-row {
+    display: flex; gap: 8px; margin-bottom: 48px; flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em;
+    padding: 8px 16px; border-radius: 2px; border: 1px solid var(--rule);
+    background: var(--warm-white); color: var(--text-mid); cursor: pointer;
+    transition: all 0.2s; text-transform: uppercase;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--navy); color: white; border-color: var(--navy);
+  }
+
+  /* List layout */
+  .library-list { display: flex; flex-direction: column; gap: 0; }
+
+  .library-item {
+    display: grid; grid-template-columns: 80px 1fr auto;
+    gap: 32px; align-items: start;
+    padding: 32px 0; border-bottom: 1px solid var(--rule);
+    text-decoration: none; color: inherit;
+    transition: background 0.15s;
+  }
+  .library-item:first-child { border-top: 1px solid var(--rule); }
+  .library-item:hover .item-title { color: var(--gold); }
+
+  .item-num {
+    font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700;
+    color: var(--rule); line-height: 1; padding-top: 4px;
+    transition: color 0.2s;
+  }
+  .library-item:hover .item-num { color: var(--gold-pale); }
+
+  .item-body {}
+  .item-category {
+    font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .item-title {
+    font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600;
+    color: var(--navy); line-height: 1.35; margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+  .item-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; max-width: 600px; }
+
+  .item-meta {
+    display: flex; flex-direction: column; align-items: flex-end; gap: 8px; padding-top: 4px;
+  }
+  .item-source {
+    font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--text-light);
+    letter-spacing: 0.05em; white-space: nowrap;
+  }
+  .item-formats { display: flex; gap: 6px; }
+  .fmt {
+    font-size: 0.65rem; font-weight: 500; padding: 3px 8px; border-radius: 2px;
+    background: var(--gold-pale); color: var(--navy);
+  }
+  .fmt.audio { background: rgba(27,42,74,0.08); }
+
+  footer {
+    border-top: 1px solid var(--rule); padding: 40px;
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-left { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--navy); }
+  .footer-left span { color: var(--gold); }
+  .footer-right { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--text-light); }
+
+  @media (max-width: 700px) {
+    .library-item { grid-template-columns: 48px 1fr; }
+    .item-meta { display: none; }
+    .item-num { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="wordmark">From <span>Anderson</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="library.html" class="active">Library</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-label">Full Archive</div>
+    <h1>The Library</h1>
+    <p>All 14 installments from the UCLA Anderson EMBA program. Each includes a written brief and a companion podcast episode.</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterItems('all', this)">All</button>
+    <button class="filter-btn" onclick="filterItems('marketing', this)">Marketing</button>
+    <button class="filter-btn" onclick="filterItems('strategy', this)">Strategy</button>
+    <button class="filter-btn" onclick="filterItems('finance', this)">Finance</button>
+    <button class="filter-btn" onclick="filterItems('organization', this)">Organization</button>
+  </div>
+
+  <div class="library-list" id="library-list">
+
+    <a href="articles/01-business-model-disruption.html" class="library-item" data-category="strategy">
+      <div class="item-num">01</div>
+      <div class="item-body">
+        <div class="item-category">Strategy</div>
+        <div class="item-title">Business Model Disruption</div>
+        <p class="item-desc">Domino's did not improve its pizza and become a better pizza company. It rebuilt its entire operating model around digital and became a technology company that sells pizza. What this means for any organization navigating a digital transformation.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 295A</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/02-behavioral-economics.html" class="library-item" data-category="marketing">
+      <div class="item-num">02</div>
+      <div class="item-body">
+        <div class="item-category">Marketing</div>
+        <div class="item-title">Your Customers Are Not Rational and That Is the Point</div>
+        <p class="item-desc">Behavioral economics does not describe how people should make decisions. It describes how they actually do. The implications for how we design offers, experiences, and communications are significant.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 411</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/03-intrapreneurship.html" class="library-item" data-category="organization">
+      <div class="item-num">03</div>
+      <div class="item-body">
+        <div class="item-category">Organization</div>
+        <div class="item-title">The Founder Mindset Inside the Organization</div>
+        <p class="item-desc">Entrepreneurship does not require a startup. The mindset, the bias toward action, the willingness to build something from ambiguity, is just as valuable inside a large organization as it is at a kitchen table.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 295A</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/04-ethical-systems.html" class="library-item" data-category="organization">
+      <div class="item-num">04</div>
+      <div class="item-body">
+        <div class="item-category">Organization</div>
+        <div class="item-title">Designing Ethical Systems</div>
+        <p class="item-desc">The Wells Fargo case is not a story about bad people. It is a story about a system that made bad behavior rational. The lesson is about how incentive structures shape what organizations actually do versus what they intend.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMTEX 414</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/05-segmentation.html" class="library-item" data-category="marketing">
+      <div class="item-num">05</div>
+      <div class="item-body">
+        <div class="item-category">Marketing</div>
+        <div class="item-title">Not All Customers Are Created Equal</div>
+        <p class="item-desc">The Natureview Farm case is a clinic in how to think about segmentation under pressure. Volume is not value. The right segment question is not who can we reach but who should we serve and why.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 411</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/06-positioning.html" class="library-item" data-category="marketing">
+      <div class="item-num">06</div>
+      <div class="item-body">
+        <div class="item-category">Marketing</div>
+        <div class="item-title">A Positioning Statement Is a Decision, Not a Description</div>
+        <p class="item-desc">Most positioning statements describe what a product does. The best ones make a choice about who it is for and what it will not be. The difference between describing and deciding is sharper than it sounds.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 411</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/07-know-your-core.html" class="library-item" data-category="strategy">
+      <div class="item-num">07</div>
+      <div class="item-body">
+        <div class="item-category">Strategy</div>
+        <div class="item-title">Know Your Core</div>
+        <p class="item-desc">Harley Davidson tried to be someone they were not. The market told them no, clearly and expensively. What the case teaches about brand identity, core audience strategy, and the real cost of chasing the wrong customer.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 411</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/08-customer-lifetime-value.html" class="library-item" data-category="marketing">
+      <div class="item-num">08</div>
+      <div class="item-body">
+        <div class="item-category">Marketing</div>
+        <div class="item-title">The Customer You Keep Is Worth More Than the One You Chase</div>
+        <p class="item-desc">CLV reframes how we evaluate marketing investment. Not what did this campaign cost, but what is this customer worth over time and are we building toward that value or eroding it?</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 411</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/09-financial-statements.html" class="library-item" data-category="finance">
+      <div class="item-num">09</div>
+      <div class="item-body">
+        <div class="item-category">Finance</div>
+        <div class="item-title">What Marketers Miss When They Skip the Balance Sheet</div>
+        <p class="item-desc">Reading a financial statement is not an accounting skill. It is a business fluency skill. What PENN Entertainment's own 10-K reveals about capital structure, lease obligations, and the strategic priorities hiding in the numbers.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMTEX 403</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/10-value-based-pricing.html" class="library-item" data-category="strategy">
+      <div class="item-num">10</div>
+      <div class="item-body">
+        <div class="item-category">Strategy</div>
+        <div class="item-title">Price to What It Is Worth, Not What It Cost</div>
+        <p class="item-desc">The Curled Metal case is a masterclass in the gap between cost-plus pricing and value capture. The framework applies to every product, offer, and program where we set a price and wonder if we are leaving something on the table.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 411</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/11-customer-time-horizon.html" class="library-item" data-category="marketing">
+      <div class="item-num">11</div>
+      <div class="item-body">
+        <div class="item-category">Marketing</div>
+        <div class="item-title">The Customer's Relationship with Time Changes Everything</div>
+        <p class="item-desc">One brand, two locations, two completely different marketing strategies. Not because the product changed — because the customer's relationship with time did. The PULL Korean Corn Dog case on why time horizon is a strategic variable, not a background assumption.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 411</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/12-ford-ev-exit.html" class="library-item" data-category="finance">
+      <div class="item-num">12</div>
+      <div class="item-body">
+        <div class="item-category">Finance</div>
+        <div class="item-title">When the Financial Statements Tell You It Is Time to Stop</div>
+        <p class="item-desc">Ford's EV segment lost $9.8 billion over two years. The pro forma analysis of a full exit shows how the three financial statements, read together, make the case for a difficult strategic decision more clearly than any strategy memo could.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMTEX 403</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/13-what-business-are-you-in.html" class="library-item" data-category="strategy">
+      <div class="item-num">13</div>
+      <div class="item-body">
+        <div class="item-category">Strategy</div>
+        <div class="item-title">What Business Are You Actually In?</div>
+        <p class="item-desc">Peloton spent years telling the world it was a hardware company. Its 67.5% subscription gross margins told a different story. The Peloton final exam case on what happens when the product is not the business, and what that means for where you put your money and attention.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">MGMT 411</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+    <a href="articles/14-ai-transformation.html" class="library-item" data-category="strategy">
+      <div class="item-num">14</div>
+      <div class="item-body">
+        <div class="item-category">Technology & Strategy</div>
+        <div class="item-title">AI Is 80% Business Transformation and 20% Technology</div>
+        <p class="item-desc">PwC's first Chief AI Officer on the number one mistake companies make with AI, Amara's Law as an explanation for the current confusion, and the lead-lag-exit framework for deciding where to actually invest.</p>
+      </div>
+      <div class="item-meta">
+        <span class="item-source">Anderson Speaker Series</span>
+        <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-left">From <span>Anderson</span></div>
+  <div class="footer-right">Michael Stamm &nbsp;&middot;&nbsp; UCLA Anderson EMBA &nbsp;&middot;&nbsp; 2027</div>
+</footer>
+
+<script>
+function filterItems(category, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.library-item').forEach(item => {
+    if (category === 'all' || item.dataset.category === category) {
+      item.style.display = 'grid';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
