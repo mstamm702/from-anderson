@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Is 80% Business Transformation and 20% Technology — From Anderson No. 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1B2A4A;--navy-deep:#111d33;--gold:#C9992A;--gold-light:#E8B84B;--gold-pale:#f5e6c0;--cream:#FAF7F2;--warm-white:#FFFDF9;--text:#1a1a1a;--text-mid:#444444;--text-light:#777777;--rule:#e0d8cc;}
+  *{margin:0;padding:0;box-sizing:border-box;}body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+  header{background:var(--navy-deep);border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:100;}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .wordmark{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;text-decoration:none;}.wordmark span{color:var(--gold);}
+  nav{display:flex;gap:32px;}nav a{font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s;}nav a:hover{color:var(--gold-light);}
+  .article-header{background:var(--navy);padding:72px 40px 64px;position:relative;overflow:hidden;}
+  .article-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+  .article-header-inner{max-width:760px;margin:0 auto;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:rgba(255,255,255,.45);text-decoration:none;text-transform:uppercase;margin-bottom:36px;transition:color .2s;}.back-link:hover{color:var(--gold);}
+  .article-meta-row{display:flex;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap;}
+  .article-num{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;color:var(--gold);background:rgba(201,153,42,.15);padding:4px 12px;border-radius:2px;}
+  .article-category{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+  .article-source{font-family:'DM Mono',monospace;font-size:.72rem;color:rgba(255,255,255,.35);}
+  .article-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:white;line-height:1.2;margin-bottom:24px;}
+  .article-hook{font-size:1.1rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.65);line-height:1.7;border-left:3px solid var(--gold);padding-left:20px;}
+  .podcast-bar{background:var(--warm-white);border-bottom:1px solid var(--rule);}
+  .podcast-bar-inner{max-width:760px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;gap:20px;}
+  .podcast-label{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;}
+  .podcast-placeholder{flex:1;background:var(--cream);border:1px dashed var(--rule);border-radius:3px;padding:12px 20px;font-family:'DM Mono',monospace;font-size:.72rem;color:var(--text-light);text-align:center;}
+  .article-body{max-width:760px;margin:0 auto;padding:64px 40px 80px;}
+  .section-block{margin-bottom:56px;}
+  .section-label{display:flex;align-items:center;gap:12px;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}.section-label::after{content:'';flex:1;height:1px;background:var(--rule);}
+  .section-heading{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;color:var(--navy);margin-bottom:16px;line-height:1.3;}
+  .prose p{font-size:1rem;line-height:1.85;color:var(--text-mid);margin-bottom:20px;font-weight:300;}.prose p:last-child{margin-bottom:0;}.prose strong{font-weight:500;color:var(--text);}
+  .question-block{background:var(--navy);border-radius:3px;padding:40px 44px;position:relative;overflow:hidden;margin-top:56px;}
+  .question-block::before{content:'\201C';position:absolute;top:-20px;left:24px;font-family:'Playfair Display',serif;font-size:8rem;font-weight:700;color:rgba(201,153,42,.15);line-height:1;pointer-events:none;}
+  .question-label{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .question-text{font-family:'Playfair Display',serif;font-size:1.25rem;font-style:italic;font-weight:400;color:white;line-height:1.65;}
+  .article-nav{border-top:1px solid var(--rule);max-width:760px;margin:0 auto;padding:40px 40px 80px;display:flex;justify-content:space-between;gap:24px;}
+  .nav-prev,.nav-next{text-decoration:none;color:inherit;flex:1;padding:24px;border:1px solid var(--rule);border-radius:3px;transition:border-color .2s,box-shadow .2s;}.nav-next{text-align:right;}
+  .nav-prev:hover,.nav-next:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(27,42,74,.08);}
+  .nav-direction{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
+  .nav-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600;color:var(--navy);line-height:1.3;}
+  footer{border-top:1px solid var(--rule);padding:40px;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+  .footer-left{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--navy);}.footer-left span{color:var(--gold);}
+  .footer-right{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--text-light);}
+  @media(max-width:600px){.article-header{padding:48px 20px 40px;}.article-body{padding:40px 20px 60px;}.article-nav{flex-direction:column;padding:32px 20px 60px;}footer{flex-direction:column;gap:12px;padding:32px 20px;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="wordmark">From <span>Anderson</span></a>
+    <nav><a href="../index.html">Home</a><a href="../library.html">Library</a><a href="../about.html">About</a></nav>
+  </div>
+</header>
+
+<div class="article-header">
+  <div class="article-header-inner">
+    <a href="../library.html" class="back-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M7 12L2 7l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Library</a>
+    <div class="article-meta-row">
+      <span class="article-num">No. 14</span>
+      <span class="article-category">Technology &amp; Strategy</span>
+      <span class="article-source">UCLA Anderson Speaker Series &nbsp;&middot;&nbsp; Dan Diasio, PwC Chief AI Officer</span>
+    </div>
+    <h1 class="article-title">AI Is 80% Business Transformation and 20% Technology</h1>
+    <p class="article-hook">The number one mistake companies make with AI is treating it as a technology problem. The technology is the easy part. The hard part, the part that determines whether you actually get results, is the business transformation.</p>
+  </div>
+</div>
+
+<div class="podcast-bar">
+  <div class="podcast-bar-inner">
+    <span class="podcast-label">Listen</span>
+    <div class="podcast-placeholder">Podcast episode coming soon &nbsp;&middot;&nbsp; Embed audio player here</div>
+  </div>
+</div>
+
+<div class="article-body">
+  <div class="section-block">
+    <div class="section-label">The Framework</div>
+    <div class="section-heading">What PwC's First Chief AI Officer Learned the Hard Way</div>
+    <div class="prose">
+      <p>Dan Diasio, PwC's first-ever US Chief AI Officer, joined UCLA Anderson for a fireside chat in early 2026. He has spent the last several years helping CEOs and leadership teams think through how to transform with AI, and his core message was direct: <strong>the number one mistake companies make is treating AI as an 80% technology problem and 20% business transformation problem. The companies getting real results have it exactly backwards.</strong></p>
+      <p>His point of reference was a transformation project at a major tech company that was not going well. The team took a single piece of the business, third-party authorization, and in five months took 50% of the cost out of that spend. Not by identifying options — by identifying, resolving, recontacting, and reactivating, end to end, in production. That result came from treating AI as a business transformation tool, not a technology experiment.</p>
+      <p>The 80/20 framework has a specific implication. When you make AI 80% about the technology, the question becomes: what can the AI do? When you flip it, the question becomes: what part of our business needs to transform and how does AI enable that? The second question produces fundamentally different investment decisions, different resource allocation, and different accountability structures.</p>
+      <p>Diasio introduced Amara's Law as the underlying explanation for why so many organizations are confused right now. Roy Amara, a futurist from the 1970s, observed that humans tend to overestimate the impact of technology in the short run and underestimate it in the long run. This fuels hype cycles. Companies expected AI transformation faster than the technology and the organization could deliver. When results did not materialize at the expected pace, confidence eroded. What Diasio argues is that the technology is genuinely powerful, but realizing that power requires transforming the full capability stack: data layer, workflow layer, people models, partnerships, and business model strategy.</p>
+      <p>The practical tool he uses with clients is a lead-lag-exit analysis. For any part of the business: where will you lead with AI because it creates a genuine differentiator? Where will you lag, letting the industry figure it out before you adopt at maturity? And where might you exit a part of your business because the investment required to close the gap is simply not worth making? That three-way framing keeps the conversation anchored to business outcomes rather than technology capabilities.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="section-label">The Application</div>
+    <div class="section-heading">What This Means for Marketing and Digital Organizations</div>
+    <div class="prose">
+      <p>The 80/20 framework is directly applicable to how marketing and digital product organizations think about AI investment. The risk in any function is the same as the risk Diasio describes at the enterprise level: prioritizing the technology question over the transformation question.</p>
+      <p>For a marketing organization, the technology question sounds like: which AI tools should we adopt, which vendors should we evaluate, and how do we integrate these capabilities into our existing stack? These are legitimate questions. But if they dominate the AI agenda, the organization ends up with a collection of tools that improve individual tasks without changing how the function actually operates. That is a 20% investment producing 20% returns.</p>
+      <p>The transformation question sounds different: which parts of how we acquire, retain, and serve customers need to fundamentally change, and what does AI enable that we could not do before? For a loyalty and digital product organization, that might mean personalization at a scale and specificity that was previously impossible. It might mean predicting churn before it happens and intervening with the right offer at the right moment. It might mean automating the production of campaign variants that would previously have required weeks of operations time. Each of those is a business transformation enabled by technology, not a technology project with business implications.</p>
+      <p>Diasio also made a point about the frontier nature of AI adoption worth holding onto. AI is not ready for all parts of the business, and all parts of the business are not ready for AI. Going wide and shallow across every function has largely produced disappointing results. Going narrow and deep on the right spots, with the discipline of a lead-lag-exit analysis, is what produces the results that are starting to show up in the data.</p>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-label">The Question Worth Asking</div>
+    <p class="question-text">In our AI investments, are we spending 80% on the technology and 20% on the business transformation, or have we actually flipped that ratio?</p>
+  </div>
+</div>
+
+<div class="article-nav">
+  <a href="13-what-business-are-you-in.html" class="nav-prev"><div class="nav-direction">&larr; Previous</div><div class="nav-title">What Business Are You Actually In?</div></a>
+  <div></div>
+</div>
+
+<footer>
+  <div class="footer-left">From <span>Anderson</span></div>
+  <div class="footer-right">Michael Stamm &nbsp;&middot;&nbsp; UCLA Anderson EMBA 2027</div>
+</footer>
+</body>
+</html>
