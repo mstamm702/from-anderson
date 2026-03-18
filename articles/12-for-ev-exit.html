@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When the Financial Statements Tell You It Is Time to Stop — From Anderson No. 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#1B2A4A;--navy-deep:#111d33;--gold:#C9992A;--gold-light:#E8B84B;--gold-pale:#f5e6c0;--cream:#FAF7F2;--warm-white:#FFFDF9;--text:#1a1a1a;--text-mid:#444444;--text-light:#777777;--rule:#e0d8cc; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+  header{background:var(--navy-deep);border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:100;}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .wordmark{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;text-decoration:none;}
+  .wordmark span{color:var(--gold);}
+  nav{display:flex;gap:32px;}
+  nav a{font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s;}
+  nav a:hover{color:var(--gold-light);}
+  .article-header{background:var(--navy);padding:72px 40px 64px;position:relative;overflow:hidden;}
+  .article-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+  .article-header-inner{max-width:760px;margin:0 auto;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:rgba(255,255,255,.45);text-decoration:none;text-transform:uppercase;margin-bottom:36px;transition:color .2s;}
+  .back-link:hover{color:var(--gold);}
+  .article-meta-row{display:flex;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap;}
+  .article-num{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;color:var(--gold);background:rgba(201,153,42,.15);padding:4px 12px;border-radius:2px;}
+  .article-category{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+  .article-source{font-family:'DM Mono',monospace;font-size:.72rem;color:rgba(255,255,255,.35);}
+  .article-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:white;line-height:1.2;margin-bottom:24px;}
+  .article-hook{font-size:1.1rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.65);line-height:1.7;border-left:3px solid var(--gold);padding-left:20px;}
+  .podcast-bar{background:var(--warm-white);border-bottom:1px solid var(--rule);}
+  .podcast-bar-inner{max-width:760px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;gap:20px;}
+  .podcast-label{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;}
+  .podcast-placeholder{flex:1;background:var(--cream);border:1px dashed var(--rule);border-radius:3px;padding:12px 20px;font-family:'DM Mono',monospace;font-size:.72rem;color:var(--text-light);text-align:center;}
+  .article-body{max-width:760px;margin:0 auto;padding:64px 40px 80px;}
+  .section-block{margin-bottom:56px;}
+  .section-label{display:flex;align-items:center;gap:12px;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--rule);}
+  .section-heading{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;color:var(--navy);margin-bottom:16px;line-height:1.3;}
+  .prose p{font-size:1rem;line-height:1.85;color:var(--text-mid);margin-bottom:20px;font-weight:300;}
+  .prose p:last-child{margin-bottom:0;}
+  .prose strong{font-weight:500;color:var(--text);}
+  .question-block{background:var(--navy);border-radius:3px;padding:40px 44px;position:relative;overflow:hidden;margin-top:56px;}
+  .question-block::before{content:'\201C';position:absolute;top:-20px;left:24px;font-family:'Playfair Display',serif;font-size:8rem;font-weight:700;color:rgba(201,153,42,.15);line-height:1;pointer-events:none;}
+  .question-label{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .question-text{font-family:'Playfair Display',serif;font-size:1.25rem;font-style:italic;font-weight:400;color:white;line-height:1.65;}
+  .article-nav{border-top:1px solid var(--rule);max-width:760px;margin:0 auto;padding:40px 40px 80px;display:flex;justify-content:space-between;gap:24px;}
+  .nav-prev,.nav-next{text-decoration:none;color:inherit;flex:1;padding:24px;border:1px solid var(--rule);border-radius:3px;transition:border-color .2s,box-shadow .2s;}
+  .nav-next{text-align:right;}
+  .nav-prev:hover,.nav-next:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(27,42,74,.08);}
+  .nav-direction{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
+  .nav-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600;color:var(--navy);line-height:1.3;}
+  footer{border-top:1px solid var(--rule);padding:40px;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+  .footer-left{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--navy);}
+  .footer-left span{color:var(--gold);}
+  .footer-right{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--text-light);}
+  @media(max-width:600px){.article-header{padding:48px 20px 40px;}.article-body{padding:40px 20px 60px;}.article-nav{flex-direction:column;padding:32px 20px 60px;}footer{flex-direction:column;gap:12px;padding:32px 20px;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="wordmark">From <span>Anderson</span></a>
+    <nav><a href="../index.html">Home</a><a href="../library.html">Library</a><a href="../about.html">About</a></nav>
+  </div>
+</header>
+<div class="article-header">
+  <div class="article-header-inner">
+    <a href="../library.html" class="back-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M7 12L2 7l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Library</a>
+    <div class="article-meta-row">
+      <span class="article-num">No. 12</span>
+      <span class="article-category">Finance &amp; Strategy</span>
+      <span class="article-source">MGMTEX 403 &nbsp;&middot;&nbsp; Group Project</span>
+    </div>
+    <h1 class="article-title">When the Financial Statements Tell You It Is Time to Stop</h1>
+    <p class="article-hook">Ford lost $4.7 billion on EVs in 2023. Then $5.1 billion in 2024. The financial statements did not hide this. The question was whether leadership was reading them.</p>
+  </div>
+</div>
+<div class="podcast-bar">
+  <div class="podcast-bar-inner">
+    <span class="podcast-label">Listen</span>
+    <div class="podcast-placeholder">Podcast episode coming soon &nbsp;&middot;&nbsp; Embed audio player here</div>
+  </div>
+</div>
+<div class="article-body">
+  <div class="section-block">
+    <div class="section-label">The Framework</div>
+    <div class="section-heading">The Ford EV Exit Scenario and What the Pro Forma Reveals</div>
+    <div class="prose">
+      <p>The MGMTEX 403 group project asked a specific question: if Ford Motor Company executed a full strategic exit from the EV market in FY2026, what would happen to its financial statements? The exercise required building a complete pro forma using Ford's actual FY2025 10-K as the baseline.</p>
+      <p>Ford's EV segment, Ford Model e, had generated cumulative losses of roughly $9.8 billion over FY2023 and FY2024, with approximately $9.4 billion in additional EV-related impairments in FY2025. The scenario modeled a full wind-down: eliminating all Model e revenue and costs, writing down EV-specific assets and the BlueOval SK battery joint venture, and absorbing one-time cash charges for contract terminations and severance.</p>
+      <p>The income statement result was counterintuitive at first glance. Eliminating Model e removed $6.7 billion in revenue, but it also eliminated $8.0 billion in cost of sales and $0.5 billion in SG&amp;A, producing a $1.8 billion annual improvement in recurring operating income. FY2026 absorbed $6.9 billion in one-time charges, pushing the year into a deep GAAP loss. But those charges are non-recurring. From FY2027 forward, the absence of EV losses drives sustained profitability improvement.</p>
+      <p>The balance sheet told a complementary story. Total assets declined by $5.1 billion from write-downs, while cash actually increased by $3.0 billion driven by EV CapEx savings and the recurring operating improvement. The statement of cash flows confirmed the key distinction: the $5.0 billion in non-cash write-downs added back to operating cash flow meant that despite a massive GAAP loss, operating cash declined by only $0.1 billion.</p>
+      <p><strong>The strategic conclusion was clear:</strong> the $6.9 billion upfront charge is the price of structural repair. The $4.3 billion in annual free cash flow unlocked from FY2027 onward is the return. The financial statements had been making the case for some time. The question was whether leadership was reading them that way.</p>
+    </div>
+  </div>
+  <div class="section-block">
+    <div class="section-label">The Application</div>
+    <div class="section-heading">Capital Allocation Is a Financial Statement Decision</div>
+    <div class="prose">
+      <p>The Ford scenario is useful for any organization navigating a significant ongoing investment that is not producing the expected return. The pattern is familiar: a strategic bet is made, losses accumulate, and the organization faces a choice between absorbing the sunk cost and moving on or continuing to fund a position that the financials do not support.</p>
+      <p>What the pro forma exercise makes visible is that the financial statements are not just a reporting mechanism. They are a decision-making tool. The income statement tells you what the ongoing cost of the position is. The balance sheet tells you what capital is tied up in it. The cash flow statement tells you the difference between accounting losses and real cash consumption. Reading all three together gives a clearer picture of what a strategic exit actually costs versus what continuing to fund the position actually costs.</p>
+      <p>For PENN, this lens is directly applicable to how capital allocation decisions get made. PENN's balance sheet carries over $8 billion in lease liabilities from the GLPI triple-net structure, significant long-term debt, and material annual CapEx commitments. The question of where to invest, where to pull back, and what the financial statements say about the return on existing capital deployment is not an abstract strategic conversation. It is a reading exercise. The answer is in the numbers.</p>
+      <p>The Ford case also highlights the importance of distinguishing between Year 1 accounting pain and structural improvement. A decision that produces a GAAP loss in Year 1 because of non-cash write-downs is not the same as a decision that destroys value. Understanding that distinction, and being able to communicate it clearly to leadership and stakeholders, is what separates a financially literate marketer from one who defers to finance on everything.</p>
+    </div>
+  </div>
+  <div class="question-block">
+    <div class="question-label">The Question Worth Asking</div>
+    <p class="question-text">When we look at our most significant ongoing cost or investment, do we have a clear-eyed view of whether it is building toward something or simply accumulating?</p>
+  </div>
+</div>
+<div class="article-nav">
+  <a href="11-customer-time-horizon.html" class="nav-prev"><div class="nav-direction">&larr; Previous</div><div class="nav-title">The Customer's Relationship with Time Changes Everything</div></a>
+  <div></div>
+</div>
+<footer>
+  <div class="footer-left">From <span>Anderson</span></div>
+  <div class="footer-right">Michael Stamm &nbsp;&middot;&nbsp; UCLA Anderson EMBA 2027</div>
+</footer>
+</body>
+</html>
