@@ -108,6 +108,7 @@
   .item-meta {
     display: flex; flex-direction: column; align-items: flex-end; gap: 8px; padding-top: 4px;
   }
+  .item-runtime { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--text-light); letter-spacing: 0.05em; }
   .item-source {
     font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--text-light);
     letter-spacing: 0.05em; white-space: nowrap;
@@ -152,7 +153,7 @@
   <div class="page-header-inner">
     <div class="page-label">Full Archive</div>
     <h1>The Library</h1>
-    <p>All 14 installments from the UCLA Anderson EMBA program. Each includes a written brief and a companion podcast episode.</p>
+    <p>Winter 2026 &nbsp;&middot;&nbsp; 14 installments &nbsp;&middot;&nbsp; UCLA Anderson EMBA program. Each includes a written brief and a companion podcast episode.</p>
   </div>
 </div>
 
@@ -166,6 +167,12 @@
     <button class="filter-btn" onclick="filterItems('organization', this)">Organization</button>
   </div>
 
+    <div style="display:flex; justify-content:flex-end; margin-bottom: 24px; margin-top: -24px;">
+    <a href="https://open.spotify.com/show/3w4wfM9J0ZrUcUZFrAgm0O" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#1DB954;color:white;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;padding:10px 20px;border-radius:20px;text-decoration:none;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      Follow on Spotify
+    </a>
+  </div>
   <div class="library-list" id="library-list">
 
     <a href="articles/01-business-model-disruption.html" class="library-item" data-category="strategy">
@@ -177,6 +184,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 295A</span>
+        <span class="item-runtime">17 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -190,6 +198,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 411</span>
+        <span class="item-runtime">19 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -203,6 +212,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 295A</span>
+        <span class="item-runtime">19 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -216,6 +226,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMTEX 414</span>
+        <span class="item-runtime">18 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -229,6 +240,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 411</span>
+        <span class="item-runtime">14 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -242,6 +254,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 411</span>
+        <span class="item-runtime">20 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -255,6 +268,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 411</span>
+        <span class="item-runtime">18 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -268,6 +282,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 411</span>
+        <span class="item-runtime">19 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -281,6 +296,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMTEX 403</span>
+        <span class="item-runtime">17 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -294,6 +310,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 411</span>
+        <span class="item-runtime">20 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -307,6 +324,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 411</span>
+        <span class="item-runtime">~12 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -320,6 +338,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMTEX 403</span>
+        <span class="item-runtime">~12 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -333,6 +352,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">MGMT 411</span>
+        <span class="item-runtime">~12 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
@@ -346,6 +366,7 @@
       </div>
       <div class="item-meta">
         <span class="item-source">Anderson Speaker Series</span>
+        <span class="item-runtime">~12 min</span>
         <div class="item-formats"><span class="fmt">Read</span><span class="fmt audio">Listen</span></div>
       </div>
     </a>
