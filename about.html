@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Positioning Statement Is a Decision, Not a Description — From Anderson No. 06</title>
+<title>About — From Anderson</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,52 +21,39 @@
   .wordmark span { color: var(--gold); }
   nav { display: flex; gap: 32px; }
   nav a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
-  nav a:hover { color: var(--gold-light); }
-  .article-header { background: var(--navy); padding: 72px 40px 64px; position: relative; overflow: hidden; }
-  .article-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-  .article-header-inner { max-width: 760px; margin: 0 auto; }
-  .back-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); text-decoration: none; text-transform: uppercase; margin-bottom: 36px; transition: color 0.2s; }
-  .back-link:hover { color: var(--gold); }
-  .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
-  .article-num { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gold); background: rgba(201,153,42,0.15); padding: 4px 12px; border-radius: 2px; }
-  .article-category { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
-  .article-source { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: rgba(255,255,255,0.35); }
-  .article-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: white; line-height: 1.2; margin-bottom: 24px; }
-  .article-hook { font-size: 1.1rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.7; border-left: 3px solid var(--gold); padding-left: 20px; }
-  .podcast-bar { background: var(--warm-white); border-bottom: 1px solid var(--rule); }
-  .podcast-bar-inner { max-width: 760px; margin: 0 auto; padding: 20px 40px; display: flex; align-items: center; gap: 20px; }
-  .podcast-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); white-space: nowrap; }
-  .podcast-placeholder { flex: 1; background: var(--cream); border: 1px dashed var(--rule); border-radius: 3px; padding: 12px 20px; font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--text-light); text-align: center; }
-  .article-body { max-width: 760px; margin: 0 auto; padding: 64px 40px 80px; }
-  .section-block { margin-bottom: 56px; }
-  .section-label { display: flex; align-items: center; gap: 12px; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
-  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
-  .section-heading { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 600; color: var(--navy); margin-bottom: 16px; line-height: 1.3; }
-  .prose p { font-size: 1rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 20px; font-weight: 300; }
-  .prose p:last-child { margin-bottom: 0; }
-  .prose strong { font-weight: 500; color: var(--text); }
-  .question-block { background: var(--navy); border-radius: 3px; padding: 40px 44px; position: relative; overflow: hidden; margin-top: 56px; }
-  .question-block::before { content: '\201C'; position: absolute; top: -20px; left: 24px; font-family: 'Playfair Display', serif; font-size: 8rem; font-weight: 700; color: rgba(201,153,42,0.15); line-height: 1; pointer-events: none; }
-  .question-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-  .question-text { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; font-weight: 400; color: white; line-height: 1.65; }
-  .article-nav { border-top: 1px solid var(--rule); max-width: 760px; margin: 0 auto; padding: 40px 40px 80px; display: flex; justify-content: space-between; gap: 24px; }
-  .nav-prev, .nav-next { text-decoration: none; color: inherit; flex: 1; padding: 24px; border: 1px solid var(--rule); border-radius: 3px; transition: border-color 0.2s, box-shadow 0.2s; }
-  .nav-next { text-align: right; }
-  .nav-prev:hover, .nav-next:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(27,42,74,0.08); }
-  .nav-direction { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
-  .nav-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+  nav a:hover, nav a.active { color: var(--gold-light); }
+  .page-header { background: var(--navy); padding: 72px 40px 64px; position: relative; }
+  .page-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .page-header-inner { max-width: 760px; margin: 0 auto; }
+  .page-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .page-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: white; line-height: 1.2; margin-bottom: 20px; }
+  .page-hook { font-size: 1.05rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.7; border-left: 3px solid var(--gold); padding-left: 20px; }
+  .page-body { max-width: 760px; margin: 0 auto; padding: 64px 40px 80px; }
+  .about-section { margin-bottom: 52px; }
+  .about-heading { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+  .about-body p { font-size: 1rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 20px; font-weight: 300; }
+  .about-body p:last-child { margin-bottom: 0; }
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .meta-item { background: var(--warm-white); border: 1px solid var(--rule); border-radius: 3px; padding: 20px 24px; }
+  .meta-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .meta-value { font-size: 0.9rem; color: var(--navy); line-height: 1.6; }
+  .structure-list { list-style: none; }
+  .structure-list li { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
+  .structure-list li:last-child { border-bottom: none; }
+  .structure-num { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--gold); background: var(--gold-pale); padding: 3px 10px; border-radius: 2px; white-space: nowrap; align-self: flex-start; margin-top: 2px; }
+  .cta-block { background: var(--navy); border-radius: 3px; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .cta-text { font-size: 1rem; color: rgba(255,255,255,0.8); font-weight: 300; line-height: 1.6; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-deep); font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600; padding: 12px 24px; border-radius: 2px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+  .cta-btn:hover { background: var(--gold-light); }
   footer { border-top: 1px solid var(--rule); padding: 40px; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
   .footer-left { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--navy); }
   .footer-left span { color: var(--gold); }
   .footer-right { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--text-light); }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-  .article-header-inner { animation: fadeUp 0.6s ease both; }
-  .article-body { animation: fadeUp 0.6s 0.1s ease both; }
   @media (max-width: 600px) {
-    .article-header { padding: 48px 20px 40px; }
-    .article-body { padding: 40px 20px 60px; }
-    .podcast-bar-inner { padding: 16px 20px; flex-direction: column; align-items: flex-start; }
-    .article-nav { flex-direction: column; padding: 32px 20px 60px; }
+    .page-header { padding: 48px 20px 40px; }
+    .page-body { padding: 40px 20px 60px; }
+    .meta-grid { grid-template-columns: 1fr; }
+    .cta-block { flex-direction: column; align-items: flex-start; }
     footer { flex-direction: column; gap: 12px; padding: 32px 20px; }
   }
 </style>
@@ -75,70 +62,112 @@
 
 <header>
   <div class="header-inner">
-    <a href="../index.html" class="wordmark">From <span>Anderson</span></a>
+    <a href="index.html" class="wordmark">From <span>Anderson</span></a>
     <nav>
-      <a href="../index.html">Home</a>
-      <a href="../library.html">Library</a>
-      <a href="../about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="library.html">Library</a>
+      <a href="about.html" class="active">About</a>
     </nav>
   </div>
 </header>
 
-<div class="article-header">
-  <div class="article-header-inner">
-    <a href="../library.html" class="back-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 7H2M7 12L2 7l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Library</a>
-    <div class="article-meta-row">
-      <span class="article-num">No. 06</span>
-      <span class="article-category">Marketing</span>
-      <span class="article-source">MGMT 411 &nbsp;&middot;&nbsp; Marketing Management</span>
-    </div>
-    <h1 class="article-title">A Positioning Statement Is a Decision, Not a Description</h1>
-    <p class="article-hook">Most positioning statements describe what a product does. The best ones make a choice about who it is for and what it will not be. The difference between describing and deciding is sharper than it sounds.</p>
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-label">About This Series</div>
+    <h1 class="page-title">Why From Anderson Exists</h1>
+    <p class="page-hook">An MBA program is only as valuable as what you do with what you learn. This is what I am doing with it.</p>
   </div>
 </div>
 
-<div class="podcast-bar">
-  <div class="podcast-bar-inner">
-    <span class="podcast-label">Listen</span>
-    <div class="podcast-placeholder">Podcast episode coming soon &nbsp;&middot;&nbsp; Embed audio player here</div>
-  </div>
-</div>
+<div class="page-body">
 
-<div class="article-body">
-  <div class="section-block">
-    <div class="section-label">The Framework</div>
-    <div class="section-heading">What Positioning Actually Requires</div>
-    <div class="prose">
-      <p>The positioning assignment in MGMT 411 started with an AI-generated statement for a product called Loyalty Link, a consumer app for managing loyalty program accounts and credit cards in one place. The AI output was technically correct. It named the target, named the category, named the benefit. It was also completely undifferentiated. It described the product without making any choices.</p>
-      <p>Professor Shaddy's framework: for a defined target with a specific need, the product is the category that delivers a specific benefit, unlike the alternatives, because of a specific reason to believe. Every element of that structure is doing real work. The target is not broad. The benefit is not generic. The unlike clause actually names what makes this different from everything else in the category.</p>
-      <p>The revised statement: <em>For rewards maximizers who belong to multiple loyalty programs and use rewards-focused credit cards, Loyalty Link is the loyalty management app that brings rewards, status, and card-linked benefits into one place by securely linking loyalty accounts and credit cards and automatically tracking rewards across brands.</em></p>
-      <p>The difference between the AI version and the revised version is not tone. It is the presence of actual choices. The target is rewards maximizers, not all consumers who have loyalty programs. The benefit is the specific combination of loyalty accounts and credit cards. The unlike clause is implicit but present.</p>
-      <p><strong>A positioning statement that tries to serve everyone ends up meaning nothing to anyone.</strong> The discipline is in the exclusion. What the statement does not say is as important as what it does.</p>
+  <div class="about-section">
+    <div class="about-heading">The Idea Behind the Series</div>
+    <div class="about-body">
+      <p>I started the UCLA Anderson EMBA program in 2025 while working full-time in Digital Product Marketing at PENN Entertainment. The coursework is rigorous, the cases are excellent, and the frameworks are genuinely useful. But useful frameworks have a way of staying in notebooks and slide decks unless you do something intentional to bring them out.</p>
+      <p>From Anderson is that something intentional. Each installment takes one concept from the program, explains it in plain language, and connects it to the kinds of decisions that marketing and business leaders actually face. No academic jargon. No hedging. Just the idea, why it matters, and a question worth thinking about.</p>
+      <p>The goal is to make the investment in the program visible and useful to the people I work with, and to anyone else who finds their way here.</p>
     </div>
   </div>
-  <div class="section-block">
-    <div class="section-label">The Application</div>
-    <div class="section-heading">Positioning as a Filter for Every Downstream Decision</div>
-    <div class="prose">
-      <p>A strong positioning statement is not just a marketing communications tool. It is an operational filter. It tells the product team what to build and what not to build. It tells the brand team what to say and what to leave out. It tells the marketing team which channels and which audiences are in scope and which are not.</p>
-      <p>For a loyalty program, a co-branded credit card, or a digital product, the positioning question is worth asking with rigor. Who is this specifically for? What specific benefit does it deliver that nothing else delivers in exactly the same way? And what would we have to stop doing or stop saying to make that positioning clear and credible?</p>
-      <p>The temptation is always to broaden. Broader positioning feels safer because it excludes fewer potential customers. But the cost of broad positioning is that it speaks compellingly to no one specifically. The products that earn loyalty tend to be the ones that made a clear choice about who they were for.</p>
+
+  <div class="about-section">
+    <div class="about-heading">How Each Installment Is Structured</div>
+    <ul class="structure-list">
+      <li>
+        <span class="structure-num">Part 1</span>
+        <div><strong style="color: var(--navy); font-weight: 500;">The Framework</strong> — where the idea comes from, what it actually says, and the case or context that makes it concrete.</div>
+      </li>
+      <li>
+        <span class="structure-num">Part 2</span>
+        <div><strong style="color: var(--navy); font-weight: 500;">The Application</strong> — how the framework connects to real marketing and business decisions. Forward-looking and practical, not theoretical.</div>
+      </li>
+      <li>
+        <span class="structure-num">Part 3</span>
+        <div><strong style="color: var(--navy); font-weight: 500;">The Question Worth Asking</strong> — one provocation to close. Not a prescribed answer. Just a question worth sitting with.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="about-section">
+    <div class="about-heading">About Me</div>
+    <div class="about-body">
+      <p>I work in Digital Product Marketing at PENN Entertainment, one of the largest gaming and entertainment companies in North America. My work sits at the intersection of digital product, CRM and loyalty operations, and brand and campaign execution. Most of what I do involves figuring out how to connect those things in a way that actually moves the business.</p>
+      <p>I enrolled in the UCLA Anderson EMBA program because I wanted a structured way to build the strategic and financial fluency that the job increasingly demands. From Anderson is part of how I am making that worthwhile beyond my own development.</p>
     </div>
   </div>
-  <div class="question-block">
-    <div class="question-label">The Question Worth Asking</div>
-    <p class="question-text">Does our positioning statement make a choice, or does it describe everything we do for everyone who might be interested?</p>
-  </div>
-</div>
 
-<div class="article-nav">
-  <a href="05-segmentation.html" class="nav-prev"><div class="nav-direction">&larr; Previous</div><div class="nav-title">Not All Customers Are Created Equal</div></a>
-  <a href="07-know-your-core.html" class="nav-next"><div class="nav-direction">Next &rarr;</div><div class="nav-title">Know Your Core</div></a>
+  <div class="about-section">
+    <div class="about-heading">Series Details</div>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Program</div>
+        <div class="meta-value">UCLA Anderson EMBA 2027</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Format</div>
+        <div class="meta-value">Written briefs + podcast episodes</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">This Series</div>
+        <div class="meta-value">10 installments from the Winter 2026 quarter</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Read time</div>
+        <div class="meta-value">Under 3 minutes per installment</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:24px;">
+    <a href="https://open.spotify.com/show/3w4wfM9J0ZrUcUZFrAgm0O" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#1DB954;color:white;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;padding:10px 20px;border-radius:20px;text-decoration:none;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      Follow on Spotify
+    </a>
+  </div>
+  <div class="cta-block">
+    <div class="cta-text">Ready to dig in? The full library of all 10 installments is available now.</div>
+    <a href="library.html" class="cta-btn">Browse the library &rarr;</a>
+  </div>
+
+  <div class="about-section">
+    <div class="about-heading">Connect</div>
+    <div class="about-body">
+      <p>If something in the series is useful to you or you want to connect, find me on <a href="https://www.linkedin.com/in/michael-stamm-lv" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:500;">LinkedIn</a>.</p>
+    </div>
+  </div>
+
+  <div class="about-section" style="margin-top: 52px;">
+    <div class="about-heading">A Note on Attribution</div>
+    <div class="about-body">
+      <p>From Anderson is a personal initiative and not an official publication of PENN Entertainment or UCLA Anderson. The views expressed are my own. Case references are drawn from published Harvard Business School cases and publicly available sources.</p>
+    </div>
+  </div>
+
 </div>
 
 <footer>
   <div class="footer-left">From <span>Anderson</span></div>
-  <div class="footer-right">Michael Stamm &nbsp;&middot;&nbsp; UCLA Anderson EMBA &nbsp;&middot;&nbsp; 2027</div>
+  <div class="footer-right">Michael Stamm &nbsp;&middot;&nbsp; UCLA Anderson EMBA 2027</div>
 </footer>
 
 </body>
